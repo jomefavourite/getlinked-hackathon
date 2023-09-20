@@ -1,11 +1,13 @@
-import React from 'react';
-import { TypographyH1 } from '../typography';
-import { Divider } from '@nextui-org/react';
+import React from "react";
+import { TypographyH1 } from "../typography";
+import { Button, Divider } from "@nextui-org/react";
 
 function Hero() {
   return (
     <>
-      <header className='w-full px-6 max-w-[1024px] mx-auto'>
+      <header className="mx-auto w-full max-w-[1280px] px-6">
+        <p>Igniting a Revolution in HR Innovation</p>
+
         <div>
           <TypographyH1>
             getlinked Tech Hackathon <span>1.0</span>
@@ -14,9 +16,11 @@ function Hero() {
             Participate in getlinked tech Hackathon 2023 stand a chance to win a
             Big prize
           </p>
+
+          <Button>Register</Button>
         </div>
       </header>
-      <Divider className='bg-[#FFFFFF2E] w-full' />
+      <Divider className="w-full bg-[#FFFFFF2E]" />
     </>
   );
 }

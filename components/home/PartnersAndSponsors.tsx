@@ -7,8 +7,8 @@ import Image from "next/image";
 function PartnersAndSponsors() {
   return (
     <>
-      <Section className="md:block">
-        <div className="text-center">
+      <Section className="space-y-[62px] py-[70px] md:block">
+        <div className="mx-auto max-w-[452px] text-center">
           <TypographyH2 className="md:text-center">
             Partners And Sponsors
           </TypographyH2>
@@ -18,18 +18,18 @@ function PartnersAndSponsors() {
           </p>
         </div>
 
-        <div className="rounded-[5px] border border-purple-light py-[144px]">
-          <div className="mx-auto grid max-w-[898px] grid-cols-3">
-            <div className="flex items-center border-b-4 border-r-4 border-purple-light px-5 pb-5">
+        <div className="relative rounded-[5px] border border-purple-light py-[144px]">
+          <div className="mx-auto grid w-full max-w-[898px] grid-cols-3 px-5 ">
+            <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%] before:h-1 before:w-[80%] before:-translate-x-[50%]  before:bg-purple-light after:absolute after:right-0 after:top-0 after:h-[80%] after:w-1 after:bg-purple-light">
               <Image
                 src={"/images/liberty-company-logo.svg"}
                 width={120}
                 height={113}
                 alt="liberty"
-                className="mx-auto"
+                className="border-w- mx-auto"
               />
             </div>
-            <div className="flex items-center border-b-4 border-r-4 border-purple-light px-5 pb-5">
+            <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%] before:h-1 before:w-[80%] before:-translate-x-[50%]  before:bg-purple-light after:absolute after:right-0 after:top-0 after:h-[80%] after:w-1 after:bg-purple-light">
               <Image
                 src={"/images/liberty-pay-logo.svg"}
                 width={213}
@@ -38,7 +38,7 @@ function PartnersAndSponsors() {
                 className="mx-auto"
               />
             </div>
-            <div className="flex items-center border-b-4 border-purple-light px-5 pb-5">
+            <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%] before:h-1 before:w-[80%] before:-translate-x-[50%] before:bg-purple-light">
               <Image
                 src={"/images/winwise-logo.svg"}
                 width={131}
@@ -48,7 +48,7 @@ function PartnersAndSponsors() {
               />
             </div>
 
-            <div className="flex items-center border-r-4 border-purple-light px-5 pt-5">
+            <div className="relative flex items-center px-5 pt-5 after:absolute after:bottom-0 after:right-0 after:h-[80%] after:w-1 after:bg-purple-light">
               <Image
                 src={"/images/wisper-logo.svg"}
                 width={147}
@@ -57,7 +57,7 @@ function PartnersAndSponsors() {
                 className="mx-auto"
               />
             </div>
-            <div className="flex items-center border-r-4 border-purple-light px-5 pt-5">
+            <div className="relative flex items-center px-5 pt-5 after:absolute after:bottom-0 after:right-0 after:h-[80%] after:w-1 after:bg-purple-light">
               <Image
                 src={"/images/paybox.svg"}
                 width={204}
@@ -66,7 +66,7 @@ function PartnersAndSponsors() {
                 className="mx-auto"
               />
             </div>
-            <div className="flex items-center border-purple-light px-5 pt-5">
+            <div className="flex items-center px-5 pt-5">
               <Image
                 src={"/images/vuzual-plus.svg"}
                 width={231}

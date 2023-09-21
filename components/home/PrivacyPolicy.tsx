@@ -1,13 +1,13 @@
 import React from "react";
 import Section from "../layout/Section";
 import { TypographyH2 } from "../typography";
-import { Divider } from "@nextui-org/react";
+import { Button, Divider } from "@nextui-org/react";
 import Image from "next/image";
 
 function PrivacyPolicy() {
   return (
     <>
-      <Section>
+      <Section className="gap-[30px] py-[93px]">
         <div>
           <div>
             <div className="space-y-4 md:max-w-[300px]">
@@ -26,7 +26,7 @@ function PrivacyPolicy() {
             </p>
           </div>
 
-          <div className="mt-[69px] rounded-[5px] border border-purple-light bg-[rgba(217,217,217,0.03)] p-10">
+          <div className="mt-[69px] rounded-[5px] border border-purple-light bg-[rgba(217,217,217,0.03)] p-[72px]">
             <p className="leading-[216.4%]">
               At getlinked tech Hackathon 1.0, we value your privacy and are
               committed to protecting your personal information. This Privacy
@@ -54,6 +54,8 @@ function PrivacyPolicy() {
                   sites, for your project developement
                 </li>
               </ul>
+
+              <Button>Read More</Button>
             </div>
           </div>
         </div>

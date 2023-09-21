@@ -8,7 +8,7 @@ function Introduction() {
   return (
     <>
       <Section className="gap-20 py-12">
-        <div className="relative h-full w-full before:h-[25px] before:w-[21px] before:bg-[url(/images/star.svg)] after:bottom-0 after:right-0 after:top-0 after:!h-[57px] after:!w-[49px] after:bg-[url(/images/curly-arrow.svg)]">
+        <div className="relative h-full w-full before:absolute before:top-[70px] before:h-[25px] before:w-[21px] before:bg-[url(/images/star.svg)] before:bg-contain after:absolute after:-bottom-[40px] after:right-[40%] after:!h-[57px] after:!w-[49.43px] after:bg-[url(/images/curly-arrow.svg)] after:bg-contain after:bg-no-repeat md:after:bottom-0 md:after:right-0">
           <Image
             src={"/images/the-big-idea.svg"}
             width={490}
@@ -19,7 +19,7 @@ function Introduction() {
           {/* gjhjddd */}
         </div>
 
-        <div className="relative space-y-[16px] text-center after:absolute after:right-[10px] after:top-0 after:h-[10px] after:w-[10px] after:bg-[url(/images/star.svg)] md:text-left md:after:h-[36px] md:after:w-[30px]">
+        <div className="relative space-y-[16px] text-center after:absolute after:right-[10px] after:top-0 after:h-[10px] after:w-[10px] after:bg-[url(/images/star.svg)] after:bg-contain after:bg-no-repeat md:text-left md:after:h-[36px] md:after:w-[30px]">
           <TypographyH2 className="leading-[24px]">
             Introduction to getlinked{" "}
             <span className="text-purple-light">techHackathon 1.0</span>

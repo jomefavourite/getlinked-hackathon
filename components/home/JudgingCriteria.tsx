@@ -1,6 +1,6 @@
 import React from "react";
 import Section from "../layout/Section";
-import { Divider } from "@nextui-org/react";
+import { Button, Divider } from "@nextui-org/react";
 import { TypographyH2 } from "../typography";
 import Image from "next/image";
 
@@ -65,22 +65,29 @@ function JudgingCriteria() {
           />
         </div>
 
-        <div className="space-y-[16px]">
-          <TypographyH2 className="md:max-w-[267px]">
+        <div className="relative after:absolute after:right-0 after:h-[12px] after:w-[10px] after:bg-[url(/images/star-light.svg)] after:bg-contain md:after:bg-none ">
+          <TypographyH2 className="mb-[18px] md:max-w-[267px]">
             Judging Criteria{" "}
             <span className="block text-purple-light">Key attributes</span>
           </TypographyH2>
 
-          <div className="space-y-[22px]">
+          <div className="space-y-[10px] text-center md:space-y-[22px] md:text-left">
             {criteria.map((data) => (
-              <p key={data.heading} className="leading-[27.76px] ">
-                <strong className="text-[16px] font-bold text-purple-light">
+              <p
+                key={data.heading}
+                className="text-xs leading-[27.76px] md:text-sm "
+              >
+                <strong className="text-[13px] font-bold text-purple-light md:text-[16px]">
                   {data.heading}
                 </strong>{" "}
                 {data.desc}
               </p>
             ))}
           </div>
+
+          <Button className="md:mt-18 mx-auto mt-10 block rounded-[4px] bg-gradient px-[14px] text-white md:ml-0">
+            Read More
+          </Button>
         </div>
       </Section>
       <Divider className="w-full bg-[#FFFFFF2E]" />

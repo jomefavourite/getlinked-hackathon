@@ -174,11 +174,11 @@ const TimelineMobile = ({ timeline }: { timeline: TimelineMobileProps }) => {
           className={cn(
             "relative flex gap-[9px]",
             ind === 0 &&
-              "before:absolute before:-top-[40px] before:left-[35px] before:h-[16px] before:w-[14px] before:bg-[url(/images/star.svg)] before:bg-contain",
+              "before:absolute before:-top-[40px] before:left-[35px] before:h-[16px] before:w-[14px] before:bg-[url(/images/star.svg)] before:bg-contain before:bg-no-repeat",
             ind === 2 &&
-              "before:absolute before:bottom-0 before:right-[20px] before:h-[16px] before:w-[14px] before:bg-[url(/images/star-light.svg)] before:bg-contain",
+              "before:absolute before:bottom-0 before:right-[20px] before:h-[16px] before:w-[14px] before:bg-[url(/images/star-light.svg)] before:bg-contain before:bg-no-repeat",
             ind === 5 &&
-              "before:absolute before:-bottom-[38px] before:-left-[15px] before:h-[16px] before:w-[14px] before:bg-[url(/images/star-grey.svg)] before:bg-contain",
+              "before:absolute before:-bottom-[38px] before:-left-[15px] before:h-[16px] before:w-[14px] before:bg-[url(/images/star-grey.svg)] before:bg-contain before:bg-no-repeat",
           )}
         >
           <div className="flex flex-col items-center gap-[5px]">

@@ -48,6 +48,11 @@ function Faq() {
               isCompact
               id="accordion"
               className="px-0 text-xs text-white md:text-sm"
+              itemClasses={{
+                base: "pb-0 !mb-0 md:!mb-2",
+                title: "!text-xs md:!text-sm !leading-[18.5px]",
+                titleWrapper: "pb-0",
+              }}
             >
               {faq.map((data, ind) => (
                 <AccordionItem

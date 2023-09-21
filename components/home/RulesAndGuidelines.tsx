@@ -24,16 +24,17 @@ function RulesAndGuidelines() {
           className="not-sr-only absolute left-0 -z-10 w-full opacity-[58%] md:hidden"
         />
         {/* Background Image */}
+        <div className="relative before:absolute before:top-[45%] before:h-[12px] before:w-[18px] before:bg-[url(/images/star-light.svg)] before:bg-contain before:bg-no-repeat md:order-2 md:before:bg-none">
+          <Image
+            src={"/images/rules-and-guidelines.svg"}
+            width={490}
+            height={477}
+            alt="Rules and Guidelines"
+            className="mx-auto md:order-2"
+          />
+        </div>
 
-        <Image
-          src={"/images/rules-and-guidelines.svg"}
-          width={490}
-          height={477}
-          alt="Rules and Guidelines"
-          className="mx-auto md:order-2"
-        />
-
-        <div className="space-y-[16px] text-center md:text-left">
+        <div className="relative space-y-[16px] text-center before:absolute before:right-0 before:h-[14px] before:w-[12px] before:bg-[url(/images/star-grey.svg)] before:bg-contain after:absolute after:left-[60px] after:h-[12px] after:w-[10px] after:bg-[url(/images/star-light.svg)] after:bg-contain md:text-left md:before:left-[250px] md:before:h-[32px] md:before:w-[26px] md:after:left-auto md:after:right-0 md:after:h-[32px] md:after:w-[26px]">
           <TypographyH2 className="md:max-w-[170px]">
             Rules and <span className="text-purple-light">Guidelines</span>
           </TypographyH2>

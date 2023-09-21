@@ -1,7 +1,7 @@
-import { cn } from '@/lib/util';
-import React from 'react';
+import { cn } from "@/lib/util";
+import React from "react";
 
-interface TypographyH2Props extends React.ComponentProps<'h2'> {
+interface TypographyH2Props extends React.ComponentProps<"h2"> {
   className?: string;
   children: React.ReactNode;
 }
@@ -10,8 +10,8 @@ function TypographyH2({ children, className }: TypographyH2Props) {
   return (
     <h2
       className={cn(
-        'font-clashDisplay text-xl leading-10 md:text-[32px] font-bold text-center md:text-left',
-        className
+        "text-center font-clashDisplay text-xl font-bold md:text-left md:text-[32px] md:leading-10",
+        className,
       )}
     >
       {children}

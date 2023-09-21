@@ -33,14 +33,14 @@ function Faq() {
   return (
     <>
       <Section className="gap-5 py-[60px] md:py-[72px]">
-        <div>
-          <TypographyH2 className="md:max-w-[253px]">
+        <div className="relative before:absolute before:-top-[20px] before:left-[58px] before:block before:h-[22px] before:w-[18px] before:bg-[url(/images/star.svg)]  before:bg-contain before:bg-no-repeat md:before:-left-[35px] md:before:-top-[60px] md:before:!h-[36px] md:before:!w-[30px] ">
+          <TypographyH2 className=" md:max-w-[253px] ">
             Frequently Ask
-            <span className="text-purple-light">Question</span>
+            <span className="block text-purple-light">Question</span>
           </TypographyH2>
-          <p className="leading-[27.5px]">
-            We got answers to the questions that you might want to ask about
-            getlinked Hackathon 1.0
+          <p className="mx-auto mt-4 max-w-[342px] text-center text-xs !leading-[27.5px] md:ml-0 md:text-left  md:text-sm">
+            We got answers to the questions that you might want to ask about{" "}
+            <strong>getlinked Hackathon 1.0</strong>
           </p>
 
           <div className="mt-[45.69px] md:mt-[68px]">

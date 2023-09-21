@@ -8,19 +8,23 @@ function Introduction() {
   return (
     <>
       <Section className="gap-20 py-12">
-        <Image
-          src={"/images/the-big-idea.svg"}
-          width={490}
-          height={477}
-          alt="The big idea"
-        />
+        <div className="relative h-full w-full before:h-[25px] before:w-[21px] before:bg-[url(/images/star.svg)] after:bottom-0 after:right-0 after:top-0 after:!h-[57px] after:!w-[49px] after:bg-[url(/images/curly-arrow.svg)]">
+          <Image
+            src={"/images/the-big-idea.svg"}
+            width={490}
+            height={477}
+            alt="The big idea"
+            className="mx-auto"
+          />
+          {/* gjhjddd */}
+        </div>
 
-        <div className="space-y-[16px] text-center md:text-left">
-          <TypographyH2>
+        <div className="relative space-y-[16px] text-center after:absolute after:right-[10px] after:top-0 after:h-[10px] after:w-[10px] after:bg-[url(/images/star.svg)] md:text-left md:after:h-[36px] md:after:w-[30px]">
+          <TypographyH2 className="leading-[24px]">
             Introduction to getlinked{" "}
             <span className="text-purple-light">techHackathon 1.0</span>
           </TypographyH2>
-          <p className="text-[13px] leading-[27.5px] md:max-w-[535px] md:text-sm">
+          <p className="text-[13px] !leading-[27.5px] md:max-w-[527px] md:text-sm">
             Our tech hackathon is a melting pot of visionaries, and its purpose
             is as clear as day: to shape the future. Whether you're a coding
             genius, a design maverick, or a concept wizard, you'll have the

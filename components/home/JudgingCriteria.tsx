@@ -30,18 +30,45 @@ const criteria = [
 function JudgingCriteria() {
   return (
     <>
-      <Section className="gap-10 py-[92px]">
+      <Section className=" gap-10 py-[92px]">
+        {/* Background Image */}
+        <Image
+          src={"/images/judging-bg.png"}
+          width={490}
+          height={477}
+          alt=""
+          className="not-sr-only absolute left-0 -z-10  hidden w-screen translate-y-[250px] overflow-hidden opacity-[68%] md:block"
+        />
+        <Image
+          src={"/images/judging-bg-mobile.png"}
+          width={490}
+          height={477}
+          alt=""
+          className="not-sr-only absolute left-0 -z-10 w-full opacity-[58%] md:hidden"
+        />
+        {/* Background Image */}
+
         <Image
           src="/images/judging-criteria.svg"
           width={710}
           height={714}
           alt="Judging Criteria Key attributes"
+          className="hidden md:block"
         />
+        <div className="relative before:absolute before:-top-[67px]  before:left-[50%] before:h-[17px] before:w-[13px] before:bg-[url(/images/star.svg)] before:bg-contain before:bg-no-repeat md:hidden">
+          <Image
+            src="/images/judging-criteria-mobile.svg"
+            width={710}
+            height={714}
+            alt="Judging Criteria Key attributes"
+            className=" "
+          />
+        </div>
 
         <div className="space-y-[16px]">
           <TypographyH2 className="md:max-w-[267px]">
             Judging Criteria{" "}
-            <span className="text-purple-light">Key attributes</span>
+            <span className="block text-purple-light">Key attributes</span>
           </TypographyH2>
 
           <div className="space-y-[22px]">

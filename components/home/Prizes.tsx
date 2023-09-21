@@ -7,7 +7,24 @@ import Image from "next/image";
 function Prizes() {
   return (
     <>
-      <Section className="max-w-[1280px] gap-5">
+      <Section className="max-w-[1280px]  gap-5  py-[74px]">
+        {/* Background Image */}
+        {/* <Image
+          src={"/images/prize-bg-light.png"}
+          width={490}
+          height={477}
+          alt=""
+          className="not-sr-only absolute left-0 -z-10 hidden w-full opacity-[68%] md:block"
+        /> */}
+        {/* <Image
+          src={"/images/prizes-bg.png"}
+          width={490}
+          height={477}
+          alt=""
+          className="not-sr-only absolute left-0 -z-10 hidden w-full bg-contain opacity-[19%] md:block"
+        /> */}
+        {/* Background Image */}
+
         <Image
           src="/images/prizes.svg"
           width={548}
@@ -26,14 +43,14 @@ function Prizes() {
             </p>
           </div>
 
-          <div className="mt-[264px] flex">
-            <div className="relative flex h-[296px] max-w-[212px] items-end justify-center rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-8 text-center">
+          <div className="mt-[264px] flex gap-[30px]">
+            <div className="relative flex h-[296px] w-full max-w-[212px] flex-col items-end justify-center rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-8 text-center">
               <Image
                 src="/images/silver-medal.svg"
                 width={179}
                 height={180}
                 alt="Silver Medal"
-                className="absolute -top-[89.5px]"
+                className=" w-full -translate-y-[89.5px]"
               />
               <div>
                 <p className="font-semibold leading-5 md:text-[24px]">
@@ -45,13 +62,13 @@ function Prizes() {
                 </p>
               </div>
             </div>
-            <div className="relative flex h-[296px] max-w-[212px] items-end justify-center rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-8 text-center">
+            <div className="relative flex h-[296px] w-full max-w-[212px] flex-col items-end justify-center rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-8 text-center">
               <Image
                 src="/images/gold-medal.svg"
                 width={290}
                 height={180}
                 alt="Silver Medal"
-                className="absolute -top-[89.5px] z-10 max-w-[290px]"
+                className="z-10 w-full max-w-[290px] -translate-y-[145px]"
               />
               <div>
                 <p className="font-semibold leading-5 md:text-[24px]">
@@ -63,13 +80,13 @@ function Prizes() {
                 </p>
               </div>
             </div>
-            <div className="relative flex h-[296px] max-w-[212px] items-end justify-center rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-8 text-center">
+            <div className="relative flex h-[296px] w-full max-w-[212px] flex-col items-end justify-center rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-8 text-center">
               <Image
                 src="/images/bronze-medal.svg"
                 width={179}
                 height={180}
                 alt="Bronze Medal"
-                className="absolute -top-[89.5px]"
+                className=" w-full -translate-y-[89.5px]"
               />
               <div>
                 <p className="font-semibold leading-5 md:text-[24px]">
@@ -85,7 +102,7 @@ function Prizes() {
         </div>
       </Section>
 
-      <Divider className="w-full bg-[#FFFFFF2E]" />
+      {/* <Divider className="w-full bg-[#FFFFFF2E]" /> */}
     </>
   );
 }

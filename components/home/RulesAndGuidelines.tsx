@@ -30,7 +30,7 @@ function RulesAndGuidelines() {
           width={490}
           height={477}
           alt="Rules and Guidelines"
-          className="md:order-2"
+          className="mx-auto md:order-2"
         />
 
         <div className="space-y-[16px] text-center md:text-left">

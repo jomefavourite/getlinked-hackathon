@@ -9,7 +9,7 @@ function Section({ className, children }: Props) {
   return (
     <section
       className={cn(
-        "mx-auto grid w-full max-w-[1280px] items-center px-6 md:grid-cols-2",
+        "mx-auto grid w-full max-w-[1280px] items-center px-8 md:grid-cols-2",
         className,
       )}
     >

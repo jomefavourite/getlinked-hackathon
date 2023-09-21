@@ -9,7 +9,7 @@ const unica = Unica_One({ subsets: ["latin"], weight: "400" });
 function Hero() {
   return (
     <>
-      <header className="relative mx-auto grid w-full max-w-[1280px] grid-cols-2 items-center px-6">
+      <header className="relative mx-auto grid w-full max-w-[1280px] grid-cols-2 items-center px-8">
         <p className="absolute top-0">Igniting a Revolution in HR Innovation</p>
 
         <div>

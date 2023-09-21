@@ -8,6 +8,23 @@ function PartnersAndSponsors() {
   return (
     <>
       <Section className="space-y-[62px] py-[70px] md:block">
+        {/* Background Image */}
+        <Image
+          src={"/images/partner-bg.png"}
+          width={490}
+          height={477}
+          alt=""
+          className="not-sr-only absolute left-0 -z-10 hidden w-full translate-y-[-120px] opacity-[68%] md:block"
+        />
+        {/* <Image
+          src={"/images/rule-bg-mobile.png"}
+          width={490}
+          height={477}
+          alt=""
+          className="not-sr-only absolute left-0 -z-10 w-full opacity-[58%] md:hidden"
+        /> */}
+        {/* Background Image */}
+
         <div className="mx-auto max-w-[452px] text-center">
           <TypographyH2 className="md:text-center">
             Partners And Sponsors

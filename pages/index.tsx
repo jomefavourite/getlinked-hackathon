@@ -25,7 +25,9 @@ export default function Home() {
       <JudgingCriteria />
       <Faq />
       <Timeline />
-      <Prizes />
+      <div className="bg-[#120b21b1] bg-opacity-[98%] bg-[url(/images/prize-bg-light.png)]">
+        <Prizes />
+      </div>
       <PartnersAndSponsors />
       <PrivacyPolicy />
       <Footer />

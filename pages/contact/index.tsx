@@ -1,22 +1,12 @@
-import Toast from "@/components/Toast";
 import Nav from "@/components/layout/Nav";
 import { Button, Input } from "@nextui-org/react";
 import Head from "next/head";
 import Image from "next/image";
 import React, { FormEvent, useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 function ContactPage() {
   const [isLoading, setIsLoading] = useState(false);
-  const [isSuccess, setSuccess] = useState<null | boolean>(null);
-
-  // This isn't done
-  useEffect(() => {
-    const interval = setTimeout(() => {
-      setSuccess(null);
-    }, 200);
-
-    return () => clearInterval(interval);
-  }, [isSuccess]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -37,12 +27,11 @@ function ContactPage() {
       }),
     })
       .then((res) => {
-        setIsLoading(false);
-        setSuccess(true);
+        toast.success("Contact Submitted! 🎉");
         // console.log(res);
       })
       .catch((e) => {
-        setSuccess(false);
+        toast.error("Something Went Wrong!");
         // console.log(e);
       })
       .finally(() => {
@@ -57,8 +46,6 @@ function ContactPage() {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
       </Head>
       <Nav />
-
-      <Toast isSuccess={isSuccess} />
 
       <section className="mx-auto my-[100px] grid w-full max-w-[1280px]  place-content-center px-8 md:grid-cols-2">
         {/* Background Image */}

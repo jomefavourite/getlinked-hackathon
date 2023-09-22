@@ -18,6 +18,7 @@ export default function Home() {
         <title>GetLinked Tech Hackathon 1.0</title>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
       </Head>
+
       {/* <Nav /> */}
       <Hero />
       <Introduction />

@@ -74,7 +74,7 @@ function Hero() {
             Big prize
           </p>
 
-          <Button className="mt-8 rounded-sm bg-gradient px-[46px]   text-white">
+          <Button className="mt-8 rounded-[4px] bg-gradient px-[46px]   text-white">
             Register
           </Button>
 

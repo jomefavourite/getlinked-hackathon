@@ -36,7 +36,8 @@ function RulesAndGuidelines() {
 
         <div className="relative space-y-[16px] text-center before:absolute before:right-0 before:h-[14px] before:w-[12px] before:bg-[url(/images/star-grey.svg)] before:bg-contain after:absolute after:left-[60px] after:h-[12px] after:w-[10px] after:bg-[url(/images/star-light.svg)] after:bg-contain md:text-left md:before:left-[250px] md:before:h-[32px] md:before:w-[26px] md:after:left-auto md:after:right-0 md:after:h-[32px] md:after:w-[26px]">
           <TypographyH2 className="md:max-w-[170px]">
-            Rules and <span className="text-purple-light">Guidelines</span>
+            Rules and{" "}
+            <span className="block text-purple-light">Guidelines</span>
           </TypographyH2>
           <p className="text-[13px] !leading-[27.5px] md:text-sm">
             Our tech hackathon is a melting pot of visionaries, and its purpose

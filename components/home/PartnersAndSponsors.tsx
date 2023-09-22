@@ -7,7 +7,7 @@ import Image from "next/image";
 function PartnersAndSponsors() {
   return (
     <>
-      <Section className="space-y-[62px] py-[70px] md:block">
+      <Section className=" py-[70px] md:block">
         {/* Background Image */}
         <Image
           src={"/images/partner-bg.png"}
@@ -16,28 +16,28 @@ function PartnersAndSponsors() {
           alt=""
           className="not-sr-only absolute left-0 -z-10 hidden w-full translate-y-[-120px] opacity-[68%] md:block"
         />
-        {/* <Image
-          src={"/images/rule-bg-mobile.png"}
+        <Image
+          src={"/images/partner-bg-mobile.png"}
           width={490}
           height={477}
           alt=""
-          className="not-sr-only absolute left-0 -z-10 w-full opacity-[58%] md:hidden"
-        /> */}
+          className="not-sr-only absolute left-0 -z-10 w-full translate-y-[45px] opacity-[58%] md:hidden"
+        />
         {/* Background Image */}
 
         <div className="mx-auto max-w-[452px] text-center">
-          <TypographyH2 className="md:text-center">
+          <TypographyH2 className="mb-4 md:text-center">
             Partners And Sponsors
           </TypographyH2>
-          <p>
+          <p className="text-xs leading-[20.5px] md:text-sm">
             Getlinked Hackathon 1.0 is honored to have the following major
             companies as its partners and sponsors
           </p>
         </div>
 
-        <div className="relative rounded-[5px] border border-purple-light py-[144px]">
+        <div className="relative mt-12 rounded-[5px] border border-purple-light py-[40px] md:py-[144px]">
           <div className="mx-auto grid w-full max-w-[898px] grid-cols-3 px-5 ">
-            <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%] before:h-1 before:w-[80%] before:-translate-x-[50%]  before:bg-purple-light after:absolute after:right-0 after:top-0 after:h-[80%] after:w-1 after:bg-purple-light">
+            <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%]  before:h-[2px] before:w-[80%] before:-translate-x-[50%] before:bg-purple-light  after:absolute after:right-0 after:top-0 after:h-[80%] after:w-[2px]  after:bg-purple-light md:before:h-1 md:after:w-1">
               <Image
                 src={"/images/liberty-company-logo.svg"}
                 width={120}
@@ -46,7 +46,7 @@ function PartnersAndSponsors() {
                 className="border-w- mx-auto"
               />
             </div>
-            <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%] before:h-1 before:w-[80%] before:-translate-x-[50%]  before:bg-purple-light after:absolute after:right-0 after:top-0 after:h-[80%] after:w-1 after:bg-purple-light">
+            <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%]  before:h-[2px] before:w-[80%] before:-translate-x-[50%] before:bg-purple-light  after:absolute after:right-0 after:top-0 after:h-[80%] after:w-[2px] after:bg-purple-light md:before:h-1 md:after:w-1">
               <Image
                 src={"/images/liberty-pay-logo.svg"}
                 width={213}
@@ -55,7 +55,7 @@ function PartnersAndSponsors() {
                 className="mx-auto"
               />
             </div>
-            <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%] before:h-1 before:w-[80%] before:-translate-x-[50%] before:bg-purple-light">
+            <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%]  before:h-[2px] before:w-[80%] before:-translate-x-[50%] before:bg-purple-light md:before:h-1">
               <Image
                 src={"/images/winwise-logo.svg"}
                 width={131}
@@ -65,7 +65,7 @@ function PartnersAndSponsors() {
               />
             </div>
 
-            <div className="relative flex items-center px-5 pt-5 after:absolute after:bottom-0 after:right-0 after:h-[80%] after:w-1 after:bg-purple-light">
+            <div className="relative flex items-center px-5 pt-5 after:absolute after:bottom-0 after:right-0 after:h-[80%] after:w-[2px] after:bg-purple-light md:after:w-1">
               <Image
                 src={"/images/wisper-logo.svg"}
                 width={147}
@@ -74,7 +74,7 @@ function PartnersAndSponsors() {
                 className="mx-auto"
               />
             </div>
-            <div className="relative flex items-center px-5 pt-5 after:absolute after:bottom-0 after:right-0 after:h-[80%] after:w-1 after:bg-purple-light">
+            <div className="relative flex items-center px-5 pt-5 after:absolute after:bottom-0 after:right-0 after:h-[80%] after:w-[2px] after:bg-purple-light md:after:w-1">
               <Image
                 src={"/images/paybox.svg"}
                 width={204}

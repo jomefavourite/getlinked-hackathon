@@ -3,11 +3,20 @@ import Nav from "@/components/layout/Nav";
 import { Button, Input } from "@nextui-org/react";
 import Head from "next/head";
 import Image from "next/image";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 
 function ContactPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setSuccess] = useState<null | boolean>(null);
+
+  // This isn't done
+  useEffect(() => {
+    const interval = setTimeout(() => {
+      setSuccess(null);
+    }, 200);
+
+    return () => clearInterval(interval);
+  }, [isSuccess]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();

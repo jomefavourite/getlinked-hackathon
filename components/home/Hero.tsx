@@ -1,15 +1,17 @@
 import React from "react";
 import { TypographyH1 } from "../typography";
-import { Button, Divider } from "@nextui-org/react";
+import { Button, Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
 import { Unica_One } from "next/font/google";
+import NextLink from "next/link";
+import { motion } from "framer-motion";
 
 const unica = Unica_One({ subsets: ["latin"], weight: "400" });
 
 function Hero() {
   return (
     <>
-      <header className="mx-auto grid w-full max-w-[1280px] items-center px-8 pt-20 md:grid-cols-2  md:pt-32">
+      <header className=" mx-auto grid min-h-screen w-full max-w-[1280px] items-center px-8 pt-20  md:grid-cols-2 md:pt-32">
         {/* Background Image */}
         <Image
           src={"/images/hero-bg.png"}
@@ -27,7 +29,7 @@ function Hero() {
         />
         {/* Background Image */}
 
-        <div className="absolute right-0 top-0 pr-8">
+        <div className="absolute top-[65px] pr-8 md:right-[30px]">
           <p className="text-base font-bold sm:text-2xl md:text-[36px]">
             Igniting a Revolution in HR Innovation
           </p>
@@ -40,7 +42,12 @@ function Hero() {
           />
         </div>
 
-        <div className="flex flex-col items-center md:items-start">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="flex flex-col items-center md:items-start"
+        >
           <TypographyH1 className="relative whitespace-nowrap before:absolute before:right-0 before:h-[8px] before:w-[6px] before:bg-[url(/images/star-grey.svg)] before:bg-contain before:bg-no-repeat after:absolute after:-top-[30px] after:left-[60px] after:h-[12px] after:w-[10px] after:bg-[url(/images/star-light.svg)] after:bg-contain md:leading-[70px] md:before:-right-[80px] md:before:-top-[30px] md:before:h-[32px] md:before:w-[26px] md:after:-top-[90px] md:after:left-[60px] md:after:h-[32px] md:after:w-[26px] ">
             getlinked{" "}
             <span className="relative after:absolute after:-top-[15px] after:right-[20px] after:h-[26px] after:w-[18px] after:bg-[url(/images/light-bulb.svg)] after:bg-contain after:bg-no-repeat md:after:-top-[50px] md:after:right-[30px] md:after:h-[73px] md:after:w-[53px]">
@@ -74,9 +81,11 @@ function Hero() {
             Big prize
           </p>
 
-          <Button className="mt-8 rounded-[4px] bg-gradient px-[46px]   text-white">
-            Register
-          </Button>
+          <Link as={NextLink} href="/register">
+            <Button className="mt-8 rounded-[4px] bg-gradient px-[46px]   text-white">
+              Register
+            </Button>
+          </Link>
 
           <div className="relative mt-14 flex gap-6 md:after:absolute md:after:-right-[120px] md:after:h-[32px] md:after:w-[26px] md:after:bg-[url(/images/star-grey.svg)]">
             <div className={`${unica.className} text-[48px] md:text-[64px]`}>
@@ -89,7 +98,7 @@ function Hero() {
               00<span className="text-sm uppercase">s</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         <Image
           src="/images/hero-image.svg"

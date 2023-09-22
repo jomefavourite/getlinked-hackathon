@@ -18,6 +18,7 @@ const config: Config = {
       },
       fontFamily: {
         clashDisplay: ["ClashDisplay-Variable", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },

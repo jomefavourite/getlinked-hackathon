@@ -7,7 +7,7 @@ import { TypographyH2 } from "../typography";
 function Introduction() {
   return (
     <>
-      <Section className="gap-20 py-12">
+      <Section id="overview" className="gap-20 py-12">
         <div className="relative h-full w-full before:absolute before:top-[70px] before:h-[25px] before:w-[21px] before:bg-[url(/images/star.svg)] before:bg-contain after:absolute after:-bottom-[40px] after:right-[40%] after:!h-[57px] after:!w-[49.43px] after:bg-[url(/images/curly-arrow.svg)] after:bg-contain after:bg-no-repeat md:after:bottom-0 md:after:right-0">
           <Image
             src={"/images/the-big-idea.svg"}

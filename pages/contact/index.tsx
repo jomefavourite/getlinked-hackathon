@@ -1,42 +1,50 @@
 import Nav from "@/components/layout/Nav";
 import { Button, Input } from "@nextui-org/react";
+import { useMutation } from "@tanstack/react-query";
 import Head from "next/head";
 import Image from "next/image";
 import React, { FormEvent, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { SubmitHandler, useForm, Controller } from "react-hook-form";
+import axios from "axios";
+
+type FormField = {
+  first_name: string;
+  message: string;
+  email: string;
+};
 
 function ContactPage() {
-  const [isLoading, setIsLoading] = useState(false);
+  const {
+    reset,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormField>();
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    const formData = new FormData(e.target);
-
-    fetch("https://backend.getlinked.ai/hackathon/contact-form", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: formData.get("email"),
-        // phone_number: "0903322445533",
-        first_name: formData.get("firstName"),
-        message: formData.get("message"),
-      }),
-    })
-      .then((res) => {
-        toast.success("Contact Submitted! 🎉");
-        // console.log(res);
-      })
-      .catch((e) => {
+  const { mutate, isLoading } = useMutation({
+    mutationFn: (data: {
+      email: string;
+      first_name: string;
+      message: string;
+    }) =>
+      axios.post("https://backend.getlinked.ai/hackathon/contact-form", data),
+    onSuccess() {
+      reset();
+      toast.success("Contact Submitted! 🎉");
+    },
+    onError(e: any) {
+      // console.log(e.response.data?.email);
+      if (e.response.data?.email[0]) {
+        toast.error(e.response.data?.email[0]);
+      } else {
         toast.error("Something Went Wrong!");
-        // console.log(e);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+      }
+    },
+  });
+
+  const onSubmit: SubmitHandler<FormField> = (data) => {
+    mutate(data);
   };
 
   return (
@@ -107,7 +115,10 @@ function ContactPage() {
             Email us below to any question related to our event
           </p>
 
-          <form className="mt-[34px] space-y-[39px]" onSubmit={handleSubmit}>
+          <form
+            className="mt-[34px] space-y-[39px]"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             {/* <Input
               placeholder="First Name"
               classNames={{
@@ -115,24 +126,43 @@ function ContactPage() {
                 innerWrapper: "bg-transparent",
               }}
             /> */}
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              className="w-full rounded-[4px] border-1 bg-transparent px-5 py-2 text-base placeholder:text-white"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Mail"
-              className="w-full rounded-[4px] border-1 bg-transparent px-5 py-2 text-base placeholder:text-white"
-            />
-            <textarea
-              placeholder="Message"
-              name="message"
-              rows={3}
-              className="w-full rounded-[4px] border-1 bg-transparent px-5 py-2 text-base placeholder:text-white"
-            ></textarea>
+            <div>
+              <input
+                type="text"
+                {...register("first_name", { required: true })}
+                placeholder="First Name"
+                className="w-full rounded-[4px] border-1 bg-transparent px-5 py-2 text-base placeholder:text-white"
+              />
+              {errors.first_name && (
+                <p className="mt-1 text-xs text-red-500">
+                  First name is required
+                </p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="email"
+                {...register("email", { required: true })}
+                placeholder="Mail"
+                className="w-full rounded-[4px] border-1 bg-transparent px-5 py-2 text-base placeholder:text-white"
+              />
+              {errors.email && (
+                <p className="mt-1 text-xs text-red-500">Email is required</p>
+              )}
+            </div>
+            <div>
+              <textarea
+                placeholder="Message"
+                {...register("message", { required: true })}
+                rows={3}
+                className="w-full rounded-[4px] border-1 bg-transparent px-5 py-2 text-base placeholder:text-white"
+              ></textarea>
+
+              {errors.message && (
+                <p className="mt-1 text-xs text-red-500">Message is required</p>
+              )}
+            </div>
 
             <Button
               isLoading={isLoading}

@@ -19,7 +19,7 @@ export default function Home() {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
       </Head>
 
-      {/* <Nav /> */}
+      <Nav />
       <Hero />
       <Introduction />
       <RulesAndGuidelines />

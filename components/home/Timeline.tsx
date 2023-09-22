@@ -46,7 +46,10 @@ const timeline = [
 function Timeline() {
   return (
     <>
-      <Section className="md:pb-[109px py-[80px] md:block md:pt-[72px]">
+      <Section
+        id="timeline"
+        className="md:pb-[109px py-[80px] md:block md:pt-[72px]"
+      >
         <div className="mx-auto w-full space-y-[10px] text-center md:max-w-[346px]">
           <TypographyH2 className="md:text-center">Timeline</TypographyH2>
           <p>

@@ -32,7 +32,7 @@ function Faq() {
 
   return (
     <>
-      <Section className="gap-5 py-[60px] md:py-[72px]">
+      <Section id="faqs" className="gap-5 py-[60px] md:py-[72px]">
         <div className="relative before:absolute before:-top-[20px] before:left-[58px] before:block before:h-[22px] before:w-[18px] before:bg-[url(/images/star.svg)]  before:bg-contain before:bg-no-repeat md:before:-left-[35px] md:before:-top-[60px] md:before:!h-[36px] md:before:!w-[30px] ">
           <TypographyH2 className=" md:max-w-[253px] ">
             Frequently Ask

@@ -1,9 +1,10 @@
-import React, { ComponentProps } from "react";
+import React, { ComponentProps, useRef } from "react";
 import Section from "../layout/Section";
 import { Divider } from "@nextui-org/react";
 import { TypographyH2 } from "../typography";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
+import { useInView } from "framer-motion";
 
 const faq = [
   {
@@ -27,12 +28,24 @@ const faq = [
 ];
 
 function Faq() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   const defaultContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
   return (
     <>
-      <Section id="faqs" className="gap-5 py-[60px] md:py-[72px]">
+      <Section
+        ref={ref}
+        id="faqs"
+        className="gap-5 py-[60px] md:py-[72px]"
+        style={{
+          transform: isInView ? "none" : "translateY(50px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 400ms",
+        }}
+      >
         <div className="relative before:absolute before:-top-[20px] before:left-[58px] before:block before:h-[22px] before:w-[18px] before:bg-[url(/images/star.svg)]  before:bg-contain before:bg-no-repeat md:before:-left-[35px] md:before:-top-[60px] md:before:!h-[36px] md:before:!w-[30px] ">
           <TypographyH2 className=" md:max-w-[253px] ">
             Frequently Ask

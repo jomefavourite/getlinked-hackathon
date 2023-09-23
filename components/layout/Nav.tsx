@@ -61,10 +61,17 @@ function Nav() {
           ))}
 
           {/* <NavbarItem> */}
-          <Link href="/register">
+          {/* <Link href="/register">
             <Button className="ml-12 rounded-[4px] bg-gradient px-[46px]   text-white">
               Register
             </Button>
+          </Link> */}
+
+          <Link
+            href="/register"
+            className=" rounded-[4px] bg-gradient px-[46px] py-3 text-white"
+          >
+            Register
           </Link>
           {/* </NavbarItem> */}
         </NavbarContent>
@@ -85,10 +92,17 @@ function Nav() {
             </NavbarMenuItem>
           ))}
 
-          <Link href="/register" className="h-full w-full">
+          {/* <Link href="/register" className="h-full w-full">
             <Button className=" mt-8 w-[172px] rounded-[4px] bg-gradient px-[46px]   text-white">
               Register
             </Button>
+          </Link> */}
+
+          <Link
+            href="/register"
+            className="mt-8 w-[160px]  rounded-[4px]  bg-gradient px-[46px] py-3 text-white"
+          >
+            Register
           </Link>
         </NavbarMenu>
       </Navbar>

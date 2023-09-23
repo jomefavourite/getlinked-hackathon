@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import Section from "../layout/Section";
 import { TypographyH2 } from "../typography";
 import { Button, Divider } from "@nextui-org/react";
 import Image from "next/image";
+import { useInView } from "framer-motion";
 
 function PrivacyPolicy() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <>
-      <Section className="gap-[30px] py-[93px] ">
+      <Section
+        ref={ref}
+        className="gap-[30px] py-[93px] "
+        style={{
+          transform: isInView ? "none" : "translateY(50px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 400ms",
+        }}
+      >
         <div>
           <div className="text-center md:text-left">
             <div className="space-y-4 md:max-w-[300px]">

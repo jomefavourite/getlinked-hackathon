@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useRef } from "react";
 import Section from "../layout/Section";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
 import { TypographyH2 } from "../typography";
+import { useInView } from "framer-motion";
 
 function RulesAndGuidelines() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <>
-      <Section className="bg-[url(/images/rule -bg.png)] bg-cover bg-[0] pb-[46px] md:pb-0">
+      <Section
+        ref={ref}
+        className="bg-[url(/images/rule -bg.png)] bg-cover bg-[0] pb-[46px] md:pb-0"
+      >
         {/* Background Image */}
         <Image
           src={"/images/rule-bg.png"}
@@ -24,7 +31,15 @@ function RulesAndGuidelines() {
           className="not-sr-only absolute left-0 -z-10 w-full opacity-[58%] md:hidden"
         />
         {/* Background Image */}
-        <div className="relative before:absolute before:top-[45%] before:h-[12px] before:w-[18px] before:bg-[url(/images/star-light.svg)] before:bg-contain before:bg-no-repeat md:order-2 md:before:bg-none">
+
+        <div
+          style={{
+            transform: isInView ? "none" : "translateY(50px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 400ms",
+          }}
+          className="relative before:absolute before:top-[45%] before:h-[12px] before:w-[18px] before:bg-[url(/images/star-light.svg)] before:bg-contain before:bg-no-repeat md:order-2 md:before:bg-none"
+        >
           <Image
             src={"/images/rules-and-guidelines.svg"}
             width={490}
@@ -34,7 +49,14 @@ function RulesAndGuidelines() {
           />
         </div>
 
-        <div className="relative space-y-[16px] text-center before:absolute before:right-0 before:h-[14px] before:w-[12px] before:bg-[url(/images/star-grey.svg)] before:bg-contain after:absolute after:left-[60px] after:h-[12px] after:w-[10px] after:bg-[url(/images/star-light.svg)] after:bg-contain md:text-left md:before:left-[250px] md:before:h-[32px] md:before:w-[26px] md:after:left-auto md:after:right-0 md:after:h-[32px] md:after:w-[26px]">
+        <div
+          style={{
+            transform: isInView ? "none" : "translateY(-50px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 400ms",
+          }}
+          className="relative space-y-[16px] text-center before:absolute before:right-0 before:h-[14px] before:w-[12px] before:bg-[url(/images/star-grey.svg)] before:bg-contain after:absolute after:left-[60px] after:h-[12px] after:w-[10px] after:bg-[url(/images/star-light.svg)] after:bg-contain md:text-left md:before:left-[250px] md:before:h-[32px] md:before:w-[26px] md:after:left-auto md:after:right-0 md:after:h-[32px] md:after:w-[26px]"
+        >
           <TypographyH2 className="md:max-w-[170px]">
             Rules and{" "}
             <span className="block text-purple-light">Guidelines</span>

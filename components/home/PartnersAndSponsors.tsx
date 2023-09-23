@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import Section from "../layout/Section";
 import { TypographyH2 } from "../typography";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
+import { useInView } from "framer-motion";
 
 function PartnersAndSponsors() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <>
-      <Section className=" py-[70px] md:block">
+      <Section
+        ref={ref}
+        className=" py-[70px] md:block"
+        style={{
+          transform: isInView ? "none" : "translateY(50px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 400ms",
+        }}
+      >
         {/* Background Image */}
         <Image
           src={"/images/partner-bg.png"}
@@ -43,7 +55,7 @@ function PartnersAndSponsors() {
                 width={120}
                 height={113}
                 alt="liberty"
-                className="border-w- mx-auto"
+                className="mx-auto transition-transform duration-100 ease-out hover:scale-110"
               />
             </div>
             <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%]  before:h-[2px] before:w-[80%] before:-translate-x-[50%] before:bg-purple-light  after:absolute after:right-0 after:top-0 after:h-[80%] after:w-[2px] after:bg-purple-light md:before:h-1 md:after:w-1">
@@ -52,7 +64,7 @@ function PartnersAndSponsors() {
                 width={213}
                 height={40}
                 alt="liberty pay"
-                className="mx-auto"
+                className="mx-auto transition-transform duration-100 ease-out hover:scale-110"
               />
             </div>
             <div className="relative flex items-center px-5 pb-5 before:absolute before:bottom-0 before:left-[50%]  before:h-[2px] before:w-[80%] before:-translate-x-[50%] before:bg-purple-light md:before:h-1">
@@ -61,7 +73,7 @@ function PartnersAndSponsors() {
                 width={131}
                 height={107}
                 alt="winwise logo"
-                className="mx-auto"
+                className="mx-auto transition-transform duration-100 ease-out hover:scale-110"
               />
             </div>
 
@@ -71,7 +83,7 @@ function PartnersAndSponsors() {
                 width={147}
                 height={109}
                 alt="winwise logo"
-                className="mx-auto"
+                className="mx-auto transition-transform duration-100 ease-out hover:scale-110"
               />
             </div>
             <div className="relative flex items-center px-5 pt-5 after:absolute after:bottom-0 after:right-0 after:h-[80%] after:w-[2px] after:bg-purple-light md:after:w-1">
@@ -80,7 +92,7 @@ function PartnersAndSponsors() {
                 width={204}
                 height={20}
                 alt="paybox"
-                className="mx-auto"
+                className="mx-auto transition-transform duration-100 ease-out hover:scale-110"
               />
             </div>
             <div className="flex items-center px-5 pt-5">
@@ -89,7 +101,7 @@ function PartnersAndSponsors() {
                 width={231}
                 height={21}
                 alt="vuzual plus"
-                className="mx-auto"
+                className="mx-auto transition-transform duration-100 ease-out hover:scale-110"
               />
             </div>
           </div>

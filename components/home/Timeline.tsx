@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import Section from "../layout/Section";
 import { TypographyH2 } from "../typography";
 import { Divider } from "@nextui-org/react";
 import { cn } from "@/lib/util";
+import { useInView, motion } from "framer-motion";
 
 const timeline = [
   {
@@ -44,6 +45,9 @@ const timeline = [
 ];
 
 function Timeline() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <>
       <Section
@@ -168,12 +172,38 @@ type TimelineMobileProps = {
   count: string;
 }[];
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
+
 const TimelineMobile = ({ timeline }: { timeline: TimelineMobileProps }) => {
   return (
-    <div className="space-y-[40px] md:hidden">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      className="space-y-[40px] md:hidden"
+    >
       {timeline.map((data, ind) => (
-        <div
+        <motion.div
           key={ind}
+          variants={item}
           className={cn(
             "relative flex gap-[9px]",
             ind === 0 &&
@@ -199,8 +229,8 @@ const TimelineMobile = ({ timeline }: { timeline: TimelineMobileProps }) => {
             </div>
             <p className="text-xs font-bold text-purple-light">{data.date}</p>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };

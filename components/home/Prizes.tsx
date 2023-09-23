@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useRef } from "react";
 import Section from "../layout/Section";
 import { TypographyH2 } from "../typography";
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
+import { useInView } from "framer-motion";
 
 function Prizes() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <>
-      <Section className="max-w-[1280px]  gap-5  py-[74px]">
+      <Section
+        ref={ref}
+        className="max-w-[1280px] gap-5  py-[74px]  md:flex"
+        style={{
+          transform: isInView ? "none" : "translateY(50px)",
+          opacity: isInView ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 400ms",
+        }}
+      >
         {/* Background Image */}
         {/* <Image
           src={"/images/prize-bg-light.png"}
@@ -25,75 +37,91 @@ function Prizes() {
         /> */}
         {/* Background Image */}
 
-        <Image
-          src="/images/prizes.svg"
-          width={548}
-          height={482}
-          alt="Prizes and Reward"
-        />
-
         <div>
-          <div>
-            <TypographyH2>
-              Prizes and <span className="text-purple-light">Rewards</span>
+          <div className=" md:hidden">
+            <TypographyH2 className="">
+              Prizes and{" "}
+              <span className="block text-purple-light">Rewards</span>
             </TypographyH2>
-            <p>
+            <p className="mx-auto mt-2 max-w-[227px] text-center text-xs">
               Highlight of the prizes or rewards for winners and for
               participants.
             </p>
           </div>
 
-          <div className="mt-[264px] flex gap-[30px]">
-            <div className="relative flex h-[296px] w-full max-w-[212px] flex-col items-end justify-center rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-8 text-center">
+          <Image
+            src="/images/prizes.svg"
+            width={548}
+            height={482}
+            alt="Prizes and Reward"
+            // className="w-[clamp(500px,2vh,548px)]"
+            className="mt-6 transition-transform duration-100 ease-out hover:scale-90 md:mt-0"
+          />
+        </div>
+
+        <div className="flex-1">
+          <div className="hidden md:block">
+            <TypographyH2>
+              Prizes and{" "}
+              <span className="block text-purple-light">Rewards</span>
+            </TypographyH2>
+            <p className="mt-2 max-w-[400px] leading-[170%]">
+              Highlight of the prizes or rewards for winners and for
+              participants.
+            </p>
+          </div>
+
+          <div className="mt-[140px] flex gap-[10px] md:mt-[224px] md:gap-[30px]">
+            <div className="relative flex h-[126px] w-full  max-w-[212px] flex-col justify-end rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-4 text-center sm:h-[285px] md:pb-8">
               <Image
                 src="/images/silver-medal.svg"
                 width={179}
                 height={180}
                 alt="Silver Medal"
-                className=" w-full -translate-y-[89.5px]"
+                className="absolute w-full -translate-y-[70px] transition-transform duration-75 ease-out hover:scale-110 md:-translate-y-[130px]"
               />
               <div>
-                <p className="font-semibold leading-5 md:text-[24px]">
+                <p className="text-xs font-semibold leading-5 md:text-[24px]">
                   <strong className="block font-bold  md:text-4xl">2nd</strong>{" "}
                   Runner
                 </p>
-                <p className="mt-3 font-bold text-purple-light md:text-[32px]">
+                <p className="mt-1 font-bold text-purple-light md:mt-3 md:text-[32px]">
                   N300,000
                 </p>
               </div>
             </div>
-            <div className="relative flex h-[296px] w-full max-w-[212px] flex-col items-end justify-center rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-8 text-center">
+            <div className="relative flex h-[126px] w-full  max-w-[212px] flex-col justify-end  rounded-lg border border-[#903AFF] bg-[rgba(144,58,255,0.12)] pb-4 text-center sm:h-[300px] md:pb-8">
               <Image
                 src="/images/gold-medal.svg"
-                width={290}
-                height={180}
-                alt="Silver Medal"
-                className="z-10 w-full max-w-[290px] -translate-y-[145px]"
+                width={296}
+                height={296}
+                alt="Gold Medal"
+                className="absolute z-20 w-full -translate-y-[90px] scale-150 transition-transform duration-75 ease-out hover:scale-[1.8] md:-translate-y-[180px]"
               />
               <div>
-                <p className="font-semibold leading-5 md:text-[24px]">
+                <p className="text-xs font-semibold leading-5 md:text-[24px]">
                   <strong className="block font-bold  md:text-4xl">1st</strong>{" "}
                   Runner
                 </p>
-                <p className="mt-3 font-bold text-purple-light md:text-[32px]">
+                <p className="mt-1 font-bold text-purple-light md:mt-3 md:text-[32px]">
                   N400,000
                 </p>
               </div>
             </div>
-            <div className="relative flex h-[296px] w-full max-w-[212px] flex-col items-end justify-center rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-8 text-center">
+            <div className="relative flex h-[126px]  w-full max-w-[212px] flex-col justify-end rounded-lg border border-[#D434FE] bg-[rgba(212,52,254,0.12)] pb-4 text-center sm:h-[285px] md:pb-8">
               <Image
                 src="/images/bronze-medal.svg"
                 width={179}
                 height={180}
                 alt="Bronze Medal"
-                className=" w-full -translate-y-[89.5px]"
+                className="absolute w-full -translate-y-[70px] transition-transform duration-75 ease-out hover:scale-110 md:-translate-y-[130px]"
               />
               <div>
-                <p className="font-semibold leading-5 md:text-[24px]">
+                <p className="text-xs font-semibold leading-5 md:text-[24px]">
                   <strong className="block font-bold  md:text-4xl">3rd</strong>{" "}
-                  Runner
+                  <span>Runner</span>
                 </p>
-                <p className="mt-3 font-bold text-purple-light md:text-[32px]">
+                <p className="mt-1 font-bold text-purple-light md:mt-3 md:text-[32px]">
                   N150,000
                 </p>
               </div>

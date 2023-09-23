@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TypographyH1 } from "../typography";
 import { Button, Divider, Link } from "@nextui-org/react";
 import Image from "next/image";
@@ -8,10 +8,38 @@ import { motion } from "framer-motion";
 
 const unica = Unica_One({ subsets: ["latin"], weight: "400" });
 
+const icon = {
+  hidden: {
+    pathLength: 0,
+    // fill: "rgba(255, 255, 255, 0)",
+  },
+  visible: {
+    pathLength: 1,
+    // fill: "rgba(255, 255, 255, 1)",
+  },
+};
+
 function Hero() {
+  const [count, setCount] = useState(60);
+
+  useEffect(() => {
+    let interval = setInterval(() => {
+      setCount((count) => {
+        if (count > 0) {
+          return count - 1;
+        } else {
+          clearInterval(interval);
+          return 0;
+        }
+      });
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
-      <header className=" mx-auto grid min-h-screen w-full max-w-[1280px] items-center px-8 pt-20  md:grid-cols-2 md:pt-32">
+      <header className=" h-[calc(100vh -63px)] mx-auto grid w-full max-w-[1280px] items-center pt-20 sm:h-auto md:grid-cols-2  md:px-8 md:pt-32">
         {/* Background Image */}
         <Image
           src={"/images/hero-bg.png"}
@@ -29,17 +57,40 @@ function Hero() {
         />
         {/* Background Image */}
 
-        <div className="absolute top-[65px] pr-8 md:right-[30px]">
-          <p className="text-base font-bold sm:text-2xl md:text-[36px]">
+        <div className="absolute right-[5px] top-[65px]  pr-9 md:right-[30px]">
+          <motion.p
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 2 }}
+            className="text-base font-bold sm:text-2xl md:text-[36px]"
+          >
             Igniting a Revolution in HR Innovation
-          </p>
-          <Image
+          </motion.p>
+          {/* <Image
             src={"/images/line-bg.svg"}
             width={253}
             height={11}
             alt="line"
             className="ml-auto flex w-[115px] max-w-[253px] justify-end md:w-full"
-          />
+          /> */}
+          <svg
+            width="255"
+            height="17"
+            viewBox="0 0 255 17"
+            fill="none"
+            className="ml-auto flex w-[115px] max-w-[253px] justify-end md:w-full"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <motion.path
+              d="M1 14.043C43.3333 5.7097 154.4 -5.95697 254 14.043"
+              stroke="#FF26B9"
+              variants={icon}
+              initial="hidden"
+              stroke-width="5"
+              animate="visible"
+              transition={{ duration: 2 }}
+            />
+          </svg>
         </div>
 
         <motion.div
@@ -81,30 +132,44 @@ function Hero() {
             Big prize
           </p>
 
-          <Link as={NextLink} href="/register">
-            <Button className="mt-8 rounded-[4px] bg-gradient px-[46px]   text-white">
-              Register
-            </Button>
-          </Link>
+          {/* <Button
+            href="/register"
+            as={Link}
+            className="mt-8 rounded-[4px] bg-gradient px-[46px]   text-white"
+          >
+            Register
+          </Button> */}
+
+          <NextLink
+            href="/register"
+            className="mt-8 rounded-[4px] bg-gradient px-[46px] py-3 text-white"
+          >
+            Register
+          </NextLink>
 
           <div className="relative mt-14 flex gap-6 md:after:absolute md:after:-right-[120px] md:after:h-[32px] md:after:w-[26px] md:after:bg-[url(/images/star-grey.svg)]">
             <div className={`${unica.className} text-[48px] md:text-[64px]`}>
-              00<span className="text-sm uppercase">h</span>
+              {count < 10 ? `0${count}` : count}
+              <span className="text-sm uppercase">h</span>
             </div>
             <div className={`${unica.className} text-[48px] md:text-[64px]`}>
-              00<span className="text-sm uppercase">m</span>
+              {count < 10 ? `0${count}` : count}
+              <span className="text-sm uppercase">m</span>
             </div>
             <div className={`${unica.className} text-[48px] md:text-[64px]`}>
-              00<span className="text-sm uppercase">s</span>
+              {count < 10 ? `0${count}` : count}
+              <span className="text-sm uppercase">s</span>
             </div>
           </div>
         </motion.div>
 
         <Image
-          src="/images/hero-image.svg"
+          src="/images/hero-image.min.svg"
           width={889}
           height={845}
           alt="Hero image"
+          priority
+          className="mt-12 w-full self-end sm:self-auto md:mt-0"
         />
       </header>
       <Divider className="w-full bg-[#FFFFFF2E]" />

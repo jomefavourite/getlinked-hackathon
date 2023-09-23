@@ -5,18 +5,23 @@ interface Props extends PropsWithChildren, React.ComponentProps<"section"> {
   className?: string;
 }
 
-function Section({ className, children, ...rest }: Props) {
-  return (
-    <section
-      className={cn(
-        "mx-auto grid w-full max-w-[1280px] items-center px-8 md:grid-cols-2",
-        className,
-      )}
-      {...rest}
-    >
-      {children}
-    </section>
-  );
-}
+export type Ref = HTMLElement;
+
+const Section = React.forwardRef<Ref, Props>(
+  ({ className, children, ...rest }, ref) => {
+    return (
+      <section
+        ref={ref}
+        className={cn(
+          "mx-auto grid w-full max-w-[1280px] items-center px-8 md:grid-cols-2",
+          className,
+        )}
+        {...rest}
+      >
+        {children}
+      </section>
+    );
+  },
+);
 
 export default Section;

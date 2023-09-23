@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import Section from "../layout/Section";
 import { Button, Divider } from "@nextui-org/react";
 import { TypographyH2 } from "../typography";
 import Image from "next/image";
+import { useInView } from "framer-motion";
 
 const criteria = [
   {
@@ -28,9 +29,12 @@ const criteria = [
 ];
 
 function JudgingCriteria() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
     <>
-      <Section className=" gap-10 py-[92px]">
+      <Section ref={ref} className=" gap-10 py-[92px]">
         {/* Background Image */}
         <Image
           src={"/images/judging-bg.png"}
@@ -55,7 +59,14 @@ function JudgingCriteria() {
           alt="Judging Criteria Key attributes"
           className="hidden md:block"
         />
-        <div className="relative before:absolute before:-top-[67px]  before:left-[50%] before:h-[17px] before:w-[13px] before:bg-[url(/images/star.svg)] before:bg-contain before:bg-no-repeat md:hidden">
+        <div
+          style={{
+            transform: isInView ? "none" : "translateY(50px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 400ms",
+          }}
+          className="relative before:absolute before:-top-[67px]  before:left-[50%] before:h-[17px] before:w-[13px] before:bg-[url(/images/star.svg)] before:bg-contain before:bg-no-repeat md:hidden"
+        >
           <Image
             src="/images/judging-criteria-mobile.svg"
             width={710}
@@ -65,7 +76,14 @@ function JudgingCriteria() {
           />
         </div>
 
-        <div className="relative after:absolute after:right-0 after:h-[12px] after:w-[10px] after:bg-[url(/images/star-light.svg)] after:bg-contain md:after:bg-none ">
+        <div
+          style={{
+            transform: isInView ? "none" : "translateY(-50px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 400ms",
+          }}
+          className="relative after:absolute after:right-0 after:h-[12px] after:w-[10px] after:bg-[url(/images/star-light.svg)] after:bg-contain md:after:bg-none "
+        >
           <TypographyH2 className="mb-[18px] md:max-w-[267px]">
             Judging Criteria{" "}
             <span className="block text-purple-light">Key attributes</span>

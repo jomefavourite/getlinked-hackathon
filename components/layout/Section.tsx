@@ -24,4 +24,6 @@ const Section = React.forwardRef<Ref, Props>(
   },
 );
 
+Section.displayName = "Section"
+
 export default Section;

@@ -96,6 +96,7 @@ function ContactPage() {
                 { path: "/images/linkedin.svg", alt: "Linkedin handle" },
               ].map((image) => (
                 <Image
+                key={image.path}
                   src={image.path}
                   alt={image.alt}
                   width={24}

@@ -164,7 +164,7 @@ function Hero() {
         </motion.div>
 
         <Image
-          src="/images/hero-image.min.svg"
+          src="/images/hero-image.svg"
           width={889}
           height={845}
           alt="Hero image"

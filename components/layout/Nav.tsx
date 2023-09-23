@@ -39,7 +39,7 @@ function Nav() {
         <NavbarBrand>
           <Link href="/">
             <Image
-              src={"/images/getLinked.svg"}
+              src={"/images/getlinked.svg"}
               width={171}
               height={44}
               alt="getLinked"

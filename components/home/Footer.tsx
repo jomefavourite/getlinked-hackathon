@@ -11,7 +11,7 @@ function Footer() {
             <div className="relative before:absolute before:-left-[20px] before:top-6 before:h-[10px] before:w-[9px] before:bg-[url(/images/star-light.svg)] before:bg-contain before:bg-no-repeat md:before:-left-[80px] md:before:h-[18px] md:before:w-[15px]">
               <Link href="/">
                 <Image
-                  src={"/images/getLinked.svg"}
+                  src={"/images/getlinked.svg"}
                   width={171}
                   height={44}
                   alt="getLinked"

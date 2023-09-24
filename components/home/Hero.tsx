@@ -39,7 +39,7 @@ function Hero() {
 
   return (
     <>
-      <header className=" h-[calc(100vh -63px)] mx-auto grid w-full max-w-[1280px] items-center pt-20 sm:h-auto md:grid-cols-2  md:px-8 md:pt-32">
+      <header className=" mx-auto grid w-full max-w-[1280px] items-center pt-20 sm:h-auto md:h-screen md:grid-cols-2  md:px-8 md:pt-32">
         {/* Background Image */}
         <Image
           src={"/images/hero-bg.png"}
@@ -86,7 +86,7 @@ function Hero() {
               stroke="#FF26B9"
               variants={icon}
               initial="hidden"
-              stroke-width="5"
+              strokeWidth="5"
               animate="visible"
               transition={{ duration: 2 }}
             />
